@@ -1,15 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora de Freela - He4rtDevs</title>
-    <link rel="stylesheet" href="./main.css" />
-  </head>
-  <body>
-    <div>
-      <h1>Olá mundo.</h1>
-    </div>
-    <script src="./main.js"></script>
-  </body>
+<html lang="pt-br">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Calculadora de Freela - He4rtDevs</title>
+        <link rel ="icon" href="../imgs/logo-he4rt.png"">
+
+        <!-- Reset CSS -->
+        <link rel="stylesheet" href="../reset-css/reset.css">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,100;0,300;1,900&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap v5.0.0-beta1 -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../fontawesome-free-5.15.1-web/css/all.css">
+        
+        <!-- Normalize CSS -->
+        <link rel="stylesheet" href="../normalize-v8.0.1/normalize.css">
+        
+        <!-- Main CSS -->
+        <link rel="stylesheet" href="./main.css" />
+
+    </head>
+
+    <body>
+
+        <div class="container">
+    
+            <section>
+                <div class="row">
+                        <div class="informacoes col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                            
+                            <div class="informacoesItem informacoesItemVisible">
+                                <img src="../imgs/calculadora.png">
+                                <h2>Como funciona:</h2>
+                                <p>
+                                    Esta é uma calculadora para saber quanto vale sua hora no freelancer.
+                                    No formulário ao lado você deverá preencher (em números) os valores que cada campo solicita.<br>
+                                    Para mais detalhes, utilize as setas abaixo para checar o que cada campo significa.
+                                </p>
+                            </div>
+        
+                            <div class="informacoesItem">
+                                <img src="../imgs/relogio.png">
+                                <h2>Horas Diárias:</h2>
+                                <p>
+                                    Nada mais é que as horas diárias que você irá se envolver com o projeto.
+                                    Vale lembrar que em empresas, as horas diárias "normais" são 8hrs por dia, 
+                                    geralmente, de sete horas da manhã às cinco horas da tarde.<br>
+                                    Mas aqui você decide junto ao seu cliente.
+                                </p>
+                            </div>
+        
+                            <div class="informacoesItem">
+                                <img src="../imgs/calendario.png">
+                                <h2>Dias Efetivos:</h2>
+                                <p>
+                                    Dias efetivos serão os dias que você estará presente no desenvolvimento do projeto.
+                                    Isso novamente vai depender da sua conversa com o cliente, vai trabalhar 7 dias? 15 dias?<br>
+                                    Após isso ser conversado e bem alinhado, deverá preencher este campo.
+                                </p>
+                            </div>
+        
+                            <div class="informacoesItem">
+                                <img src="../imgs/ferias.png">
+                                <h2>Dias de Férias:</h2>
+                                <p>
+                                    Quantos dias de férias decidiu tirar? Vai curtir uma praia para sair dessa rotina de tecnologias?
+                                    Este campo é justamente para esses dias, talvez não pegará férias, somente feriados, mas também atende.
+                                </p>
+                            </div>
+        
+                            <div class="informacoesItem">
+                                <img src="../imgs/valor.png">
+                                <h2>Valor do Projeto:</h2>
+                                <p>
+                                    Após toda a conversa entre você e o cliente, ficou claro quanto tempo você deverá utilizar-se de códigos.<br>
+                                    Como tempo é dinheiro, você também provavelmente sabe quanto o projeto irá custar, então este será o valor inserido aqui.<br>
+                                    OBS: utilize somente números, a calculadora não entende letras ou símbolos.
+                                </p>
+                            </div>
+        
+                            <button id="botaoPrevious"><i class="fas fa-arrow-left"></i></button>
+                            <button id="botaoNext"><i class="fas fa-arrow-right"></i></button>
+    
+                        </div>
+    
+                        <div class="formulario col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6" id="formulario">
+                            
+                            <form>
+                                <fieldset>
+                                    <h5>Horas Diárias:</h5>
+                                    <input type="number" id= "horasDiarias" /><br />
+                                    <h5>Dias Efetivos:</h5>
+                                    <input type="number" id="diasEfetivos" /><br />
+                                    <h5>Dias de Férias:</h5>
+                                    <input type="number" id="diasFerias" /><br />
+                                    <h5>Valor do Projeto:</h5>
+                                    <input type="number" id="valorProjeto" /><br />
+                                    <button type="button" id="calcular"><b>calcular</b></button>
+                                </fieldset>
+                            </form>
+    
+                            <div id="resultado" class="resultado col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                                <h3>RESULTADO: R$ <span id="valorHora"></span> POR HORA</h3>
+                                <button type="button" id="voltar"><a href=""><b>voltar</b></a></button>
+                            </div>
+    
+                        </div>
+                </div>
+            </section>
+            
+        </div>
+    
+        <footer>
+    
+            <div class="row">
+                    
+                <div class="logo col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    
+                    <img src="../imgs/logo-he4rt.png" alt="Logo da He4rt">
+    
+                </div>
+    
+                <div class="redesSociais col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    
+                    <h5>Redes Sociais He4rt Developers:</h5>
+                <ul>
+                    <li><a href=""><i class="fab fa-linkedin fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-discord fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
+                </ul>
+    
+                <h5>Redes Sociais Vinícius Martins:</h5>
+                <ul>
+                    <li><a href=""><i class="fab fa-linkedin fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-discord fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-twitter fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-instagram fa-2x"></i></a></li>
+                    <li><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
+                </ul>
+    
+            </div>
+    
+        </footer>
+    
+        <!-- Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+        <!-- Main JavaScript -->
+        <script src="main.js"></script>
+    
+    </body>
+    
 </html>
