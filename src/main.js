@@ -1,4 +1,4 @@
-// Utilizando Carousel na div de informações.
+// Carousel na div de informações.
 
 let posicaoSlide = 0;
 const slides = document.getElementsByClassName('informacoesItem');
@@ -43,6 +43,7 @@ function retrocederSlide() {
 
     atualizandoPosicaoSlide();
 }
+// /Carousel na div de informações.
 
 // Função para calcular o valor da hora do usuário.
 document.getElementById('calcular').addEventListener("click", function() {
@@ -51,7 +52,7 @@ document.getElementById('calcular').addEventListener("click", function() {
 
 function divResultado() {
 
-    //Variáveis para armazenar os dados impostos pelo usuário:
+    //Variáveis para armazenar os dados impostos pelo usuário
     var valorProjeto = document.getElementById('valorProjeto').value; // Armazenando o Valor do Projeto.
     var horasDiarias = document.getElementById('horasDiarias').value; // Armazenando a Quantidade de Horas Trabalhadas por Dia.
     var diasEfetivos = document.getElementById('diasEfetivos').value; // Armazenando os Dias Efetivos Trabalhados na Semana.
@@ -61,6 +62,7 @@ function divResultado() {
     valorHora = (valorProjeto / (diasEfetivos * 4 * horasDiarias) ) + ( ( diasFerias * diasEfetivos * horasDiarias ) );
 
     document.getElementById('formulario').innerHTML = document.getElementById('resultado').innerHTML;
+
     if(isNaN(valorHora)) {
         document.getElementById('valorHora').innerHTML = '0';
     } else {
@@ -68,3 +70,5 @@ function divResultado() {
     }
 
 }
+
+// /Função para calcular o valor da hora do usuário.
