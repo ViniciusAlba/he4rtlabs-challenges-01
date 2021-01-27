@@ -1,4 +1,4 @@
-![plot](../imgs/calculadora-freelas.png)
+![Calculator Image](./imgs/calculadora-freelas.png)
 
 # Projeto 001 - Calculadora de hora p/ Freelas (1/3)
 
